@@ -1,2 +1,9 @@
 @import "../utils/mixins";
 @import "../utils/variables";
+
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
+
+h2,
+.requiredField {
+  font-family: "Cookie", cursive;
+}

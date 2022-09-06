@@ -1,4 +1,4 @@
-const form = document.querySelector(".todoForm");
+const form = document.querySelector("#todoForm");
 const list = document.querySelector("#todoList");
 
 let todoItems = [
@@ -9,10 +9,12 @@ let todoItems = [
 ];
 
 const renderTodo = (todo) => {
+  // Met à jour le local storage suivant le contenu de todoItems à chaque appel de la fonction
   localStorage.setItem("todosLS", JSON.stringify(todoItems));
   const item = document.querySelector(`[data-key='${todo.id}']`);
   const isChecked = todo.checked ? "done" : "";
   const li = document.createElement("li");
+
   li.setAttribute("class", `todo-item ${isChecked}`);
   li.setAttribute("data-key", todo.id);
   li.innerHTML = `
@@ -20,7 +22,14 @@ const renderTodo = (todo) => {
      <label for="${todo.id}" class="tick js-tick"></label>
      <span>${todo.text}</span>
      <a href="./detailedTodo.html?id=${todo.id}" target="_blank"><button>...</button></a>
-   `;
+     <button class="delete">✕</button>
+     `;
+
+  // Supprime l'élément du DOM :
+  if (todo.deleted) {
+    item.remove();
+    return;
+  }
   // if/else qui évite que le ToDo soit dupliqué au check
   if (item) {
     list.replaceChild(li, item);
@@ -29,12 +38,16 @@ const renderTodo = (todo) => {
   }
 };
 
-// Ecoute du clic sur la "checkbox" et action sur le ToDo lié
+// Ecoute du clic sur un élément d'un ToDo et action sur le ToDo lié
 list.addEventListener("click", (event) => {
   if (event.target.classList.contains("js-tick")) {
     item = event.target.parentElement;
     const itemKey = item.dataset.key;
     toggleDone(itemKey);
+  }
+  if (event.target.classList.contains("delete")) {
+    const itemKey = event.target.parentElement.dataset.key;
+    deleteTodo(itemKey);
   }
   todoItems.sort((a, b) => a.checked - b.checked);
 });
@@ -50,17 +63,19 @@ function toggleDone(key) {
   renderTodo(todoItem);
 }
 /**
- * Récupération des données stockées dans le local storage
+ * Fonction qui permet de supprimer l'item du tableau todoItems
+ * @param {Number} key
  */
-document.addEventListener("DOMContentLoaded", () => {
-  const ref = localStorage.getItem("todosLS");
-  if (ref) {
-    todoItems = JSON.parse(ref);
-    todoItems.forEach((t) => {
-      renderTodo(t);
-    });
-  }
-});
+function deleteTodo(key) {
+  const index = todoItems.findIndex((item) => item.id === Number(key));
+  const todo = {
+    deleted: true,
+    ...todoItems[index],
+  };
+  // remove the todo item from the array by filtering it out
+  todoItems = todoItems.filter((item) => item.id !== Number(key));
+  renderTodo(todo);
+}
 
 /**
  * Fonction pour ajouter un TODO
