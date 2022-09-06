@@ -10,10 +10,11 @@ li {
 body main section #todoList {
   display: flex;
   flex-direction: column-reverse;
+  max-width: 400px;
 }
 body main section #todoList .todo-item {
   margin-bottom: 10px;
-  width: 100%;
+  width: 200px;
   display: flex;
   align-items: center;
   justify-content: space-between;

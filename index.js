@@ -9,6 +9,7 @@ let todoItems = [
 ];
 
 const renderTodo = (todo) => {
+  localStorage.setItem("todosLS", JSON.stringify(todoItems));
   const item = document.querySelector(`[data-key='${todo.id}']`);
   const isChecked = todo.checked ? "done" : "";
   const li = document.createElement("li");
@@ -18,6 +19,7 @@ const renderTodo = (todo) => {
      <input id="${todo.id}" type="checkbox"/>
      <label for="${todo.id}" class="tick js-tick"></label>
      <span>${todo.text}</span>
+     <a href="./detailedTodo.html?id=${todo.id}" target="_blank"><button>...</button></a>
    `;
   // if/else qui évite que le ToDo soit dupliqué au check
   if (item) {
@@ -47,3 +49,15 @@ function toggleDone(key) {
   todoItem.checked = !todoItem.checked;
   renderTodo(todoItem);
 }
+/**
+ * Récupération des données stockées dans le local storage
+ */
+document.addEventListener("DOMContentLoaded", () => {
+  const ref = localStorage.getItem("todosLS");
+  if (ref) {
+    todoItems = JSON.parse(ref);
+    todoItems.forEach((t) => {
+      renderTodo(t);
+    });
+  }
+});

@@ -12,9 +12,10 @@ body {
         -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
         flex-direction: column-reverse;
+        max-width: 400px;
         .todo-item {
           margin-bottom: 10px;
-          width: 100%;
+          width: 200px;
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
