@@ -1,0 +1,44 @@
+@charset "UTF-8";
+input[type=checkbox] {
+  display: none;
+}
+
+li {
+  list-style: none;
+}
+
+body main section #todoList .todo-item {
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body main section #todoList .todo-item .tick {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #333;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+body main section #todoList .todo-item .tick:before {
+  content: "✓";
+  font-size: 20px;
+  display: none;
+}
+body main section #todoList .todo-item span {
+  flex-grow: 1;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 22px;
+}
+body main section #todoList .done span {
+  text-decoration: line-through;
+  color: grey;
+}
+body main section #todoList .done .tick:before {
+  display: inline;
+}/*# sourceMappingURL=style.css.map */
