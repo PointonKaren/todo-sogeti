@@ -7,6 +7,10 @@ li {
   list-style: none;
 }
 
+body main section #todoList {
+  display: flex;
+  flex-direction: column-reverse;
+}
 body main section #todoList .todo-item {
   margin-bottom: 10px;
   width: 100%;
@@ -15,8 +19,8 @@ body main section #todoList .todo-item {
   justify-content: space-between;
 }
 body main section #todoList .todo-item .tick {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border: 3px solid #333;
   border-radius: 50%;
   display: inline-flex;
@@ -26,14 +30,15 @@ body main section #todoList .todo-item .tick {
 }
 body main section #todoList .todo-item .tick:before {
   content: "✓";
-  font-size: 20px;
   display: none;
 }
 body main section #todoList .todo-item span {
   flex-grow: 1;
   margin-left: 10px;
   margin-right: 10px;
-  font-size: 22px;
+}
+body main section #todoList .done {
+  order: -1;
 }
 body main section #todoList .done span {
   text-decoration: line-through;

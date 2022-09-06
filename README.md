@@ -9,11 +9,10 @@ L'application web "ToDo" a été développée dans le cadre d'un test technique 
 - 1: Liste de mes TODOs :
   - Titre et état
   - TODOS codés en dur
-
-### Envisagées
-
 - 2: Etat d'un TODO :
   Quand un TODO est coché, son état sera changé et il sera placé en bas de la liste.
+
+### Envisagées
 
 - 3: Détailler un TODO
 
