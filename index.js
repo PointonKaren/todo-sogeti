@@ -1,4 +1,4 @@
-const form = document.querySelector(".todoForm");
+const form = document.querySelector("#todoForm");
 const list = document.querySelector("#todoList");
 
 let todoItems = [
@@ -20,7 +20,8 @@ const renderTodo = (todo) => {
      <label for="${todo.id}" class="tick js-tick"></label>
      <span>${todo.text}</span>
      <a href="./detailedTodo.html?id=${todo.id}" target="_blank"><button>...</button></a>
-   `;
+     <button class="delete">✕</button>
+     `;
   // if/else qui évite que le ToDo soit dupliqué au check
   if (item) {
     list.replaceChild(li, item);

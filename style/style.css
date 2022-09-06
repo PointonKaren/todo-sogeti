@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
 input[type=checkbox] {
   display: none;
 }
@@ -7,44 +8,137 @@ li {
   list-style: none;
 }
 
-body main section #todoList {
+h2,
+.requiredField {
+  font-family: "Cookie", cursive;
+}
+
+body header h1 {
+  text-align: center;
+}
+body main {
+  background-color: #222222;
+  border-radius: 5px;
+  max-width: 380px;
+  margin: auto;
+  padding: 5% 5% 2% 5%;
+}
+body main section {
+  max-width: 350px;
+  margin: auto;
+  border-radius: 3px;
+  background-color: beige;
+}
+body main section .rings {
+  border-bottom: 1px dashed black;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+}
+body main section .rings .ring {
+  background-color: #222222;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  position: relative;
+  margin-bottom: 8px;
+}
+body main section .rings .ring:before {
+  content: "";
+  position: absolute;
+  background-color: silver;
+  border-radius: 5px;
+  top: -30px;
+  left: 8px;
+  width: 5px;
+  height: 42px;
+}
+body main section .form h2,
+body main section .list h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+body main section .form #todoForm {
+  position: relative;
+}
+body main section .form #todoForm .todoText,
+body main section .form #todoForm .todoDescription,
+body main section .form #todoForm .submit {
+  display: block;
+  margin: auto;
+}
+body main section .form #todoForm .todoText {
+  width: 80%;
+}
+body main section .form #todoForm .required {
+  position: absolute;
+  top: 2px;
+  right: 5%;
+}
+body main section .form #todoForm .todoDescription {
+  width: 95%;
+  height: 35px;
+  resize: none;
+}
+body main section .form .requiredField {
+  text-align: center;
+  margin-top: 5px;
+}
+body main section .list h2 {
+  margin-top: 0;
+}
+body main section .list #todoList {
   display: flex;
   flex-direction: column-reverse;
-  max-width: 400px;
+  padding: 0;
+  padding-bottom: 10px;
 }
-body main section #todoList .todo-item {
+body main section .list #todoList .todo-item {
   margin-bottom: 10px;
-  width: 200px;
+  width: 80vw;
+  max-width: 220px;
+  margin: auto;
+  margin-bottom: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-body main section #todoList .todo-item .tick {
+body main section .list #todoList .todo-item .tick {
   width: 20px;
   height: 20px;
-  border: 3px solid #333;
+  border: 3px solid #02251e;
   border-radius: 50%;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
-body main section #todoList .todo-item .tick:before {
+body main section .list #todoList .todo-item .tick:before {
   content: "✓";
+  color: #138d75;
+  font-weight: bold;
   display: none;
 }
-body main section #todoList .todo-item span {
+body main section .list #todoList .todo-item span {
   flex-grow: 1;
-  margin-left: 10px;
-  margin-right: 10px;
+  text-align: center;
 }
-body main section #todoList .done {
+body main section .list #todoList .todo-item .delete {
+  color: rgb(202, 49, 49);
+  border-radius: 50px;
+  border: 1px solid rgb(202, 49, 49);
+  font-size: 1rem;
+  margin-left: 5px;
+}
+body main section .list #todoList .done {
   order: -1;
 }
-body main section #todoList .done span {
+body main section .list #todoList .done span {
   text-decoration: line-through;
   color: grey;
 }
-body main section #todoList .done .tick:before {
+body main section .list #todoList .done .tick:before {
   display: inline;
 }/*# sourceMappingURL=style.css.map */

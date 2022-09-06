@@ -17,52 +17,66 @@
   </header>
   <main>
     <section>
-      <h2>Ajouter une tâche</h2>
-      <form class="todoForm">
-        <input autofocus type="text" aria-label="Taper la tâche à effectuer" placeholder="Tâche à effectuer"
-          required class="todoText"> <span class="required">*</span>
-        <br><textarea aria-label="Détail du ToDo" placeholder="Description du ToDo"
-          class="todoDescription"></textarea>
-        <br><input type="submit" value="Ajouter la tâche">
-      </form>
-      <p>*Champ requis</p>
-    </section>
-    <section>
-      <h2>Liste des tâches</h2>
-      <ul id="todoList">
-        <li class="todo-item" data-key="0">
-          <input id="0" type="checkbox">
-          <label for="0" class="tick js-tick"></label>
-          <span>Tâche A</span>
-          <a href="./detailedTodo.html?id=0" target="_blank">
-            <button>...</button>
-          </a>
-        </li>
-        <li class="todo-item done" data-key="1">
-          <input id="1" type="checkbox">
-          <label for="1" class="tick js-tick"></label>
-          <span>Tâche B</span>
-          <a href="./detailedTodo.html?id=1" target="_blank">
-            <button>...</button>
-          </a>
-        </li>
-        <li class="todo-item" data-key="2">
-          <input id="2" type="checkbox">
-          <label for="2" class="tick js-tick"></label>
-          <span>Tâche C</span>
-          <a href="./detailedTodo.html?id=2" target="_blank">
-            <button>...</button>
-          </a>
-        </li>
-        <li class="todo-item done" data-key="3">
-          <input id="3" type="checkbox">
-          <label for="3" class="tick js-tick"></label>
-          <span>Tâche D</span>
-          <a href="./detailedTodo.html?id=3" target="_blank">
-            <button>...</button>
-          </a>
-        </li>
-      </ul>
+      <div class="rings">
+        <span class="ring"></span>
+        <span class="ring"></span>
+        <span class="ring"></span>
+        <span class="ring"></span>
+        <span class="ring"></span>
+        <span class="ring"></span>
+      </div>
+      <div class="form">
+        <h2>Ajouter une tâche</h2>
+        <form id="todoForm">
+          <input autofocus type="text" aria-label="Taper la tâche à effectuer" placeholder="Tâche à effectuer"
+            required class="todoText"> <span class="required">*</span>
+          <br><textarea aria-label="Détail du ToDo" placeholder="Description du ToDo"
+            class="todoDescription"></textarea>
+          <br><input type="submit" value="Ajouter la tâche" class="submit">
+        </form>
+        <p class="requiredField">*Champ requis</p>
+      </div>
+      <div class="list">
+        <h2>Liste des tâches</h2>
+        <ul id="todoList">
+          <li class="todo-item" data-key="0">
+            <input id="0" type="checkbox">
+            <label for="0" class="tick js-tick"></label>
+            <span>Tâche A</span>
+            <a href="./detailedTodo.html?id=0" target="_blank">
+              <button>...</button>
+            </a>
+            <button class="delete">✕</button>
+          </li>
+          <li class="todo-item done" data-key="1">
+            <input id="1" type="checkbox">
+            <label for="1" class="tick js-tick"></label>
+            <span>Tâche B</span>
+            <a href="./detailedTodo.html?id=1" target="_blank">
+              <button>...</button>
+            </a>
+            <button class="delete">✕</button>
+          </li>
+          <li class="todo-item" data-key="2">
+            <input id="2" type="checkbox">
+            <label for="2" class="tick js-tick"></label>
+            <span>Tâche C</span>
+            <a href="./detailedTodo.html?id=2" target="_blank">
+              <button>...</button>
+            </a>
+            <button class="delete">✕</button>
+          </li>
+          <li class="todo-item done" data-key="3">
+            <input id="3" type="checkbox">
+            <label for="3" class="tick js-tick"></label>
+            <span>Tâche D</span>
+            <a href="./detailedTodo.html?id=3" target="_blank">
+              <button>...</button>
+            </a>
+            <button class="delete">✕</button>
+          </li>
+        </ul>
+      </div>
     </section>
   </main>
   <footer>
