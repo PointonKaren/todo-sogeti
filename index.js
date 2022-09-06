@@ -61,3 +61,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+/**
+ * Fonction pour ajouter un TODO
+ * @param {String} text
+ */
+const addTodo = (text, description) => {
+  const todo = {
+    text,
+    description,
+    checked: false,
+    id: Date.now(),
+  };
+  todoItems.push(todo);
+  renderTodo(todo);
+};
+
+/**
+ * Actions à effectuer lorsque le formulaire est soumis
+ */
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const inputText = document.querySelector(".todoText");
+  const inputDescription = document.querySelector(".todoDescription");
+  const text = inputText.value.trim();
+  const description = inputDescription.value.trim();
+  if (text !== "" && description == "") {
+    addTodo(text);
+  } else if (text !== "" && description !== "") {
+    addTodo(text, description);
+  }
+});
