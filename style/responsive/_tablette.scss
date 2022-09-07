@@ -1,0 +1,45 @@
+@media screen and (min-width: 600px) {
+  body {
+    main {
+      padding: 15px 15px 0 15px;
+      margin-top: 50px;
+      section {
+        .rings {
+          .ring {
+            width: 20px;
+            height: 20px;
+            border-radius: 50px;
+            position: relative;
+            margin-bottom: 8px;
+            &:before {
+              content: "";
+              position: absolute;
+              background-color: silver;
+              border-radius: 5px;
+              top: -48px;
+              left: 8px;
+              width: 5px;
+              height: 60px;
+            }
+          }
+        }
+        .content {
+          .list {
+            #todoList {
+              height: 30vh;
+            }
+          }
+        }
+      }
+      #detailed-section {
+        .rings {
+          .ring {
+            &:before {
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

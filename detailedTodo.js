@@ -5,6 +5,7 @@ const id = url.searchParams.get("id");
 let text = document.getElementById("text");
 let description = document.getElementById("description");
 let error = document.getElementById("error");
+let content = document.querySelector(".detailed-content");
 /**
  * Récupération des données du local storage
  */
@@ -15,10 +16,10 @@ let localStorageItems = JSON.parse(localStorage.getItem("todosLS"));
  */
 for (item of localStorageItems) {
   let localStorageId = item.id;
-  let section = document.querySelector("section");
   if (localStorageId == id) {
     text.textContent = item.text;
-    section.removeChild(error);
+    content.removeChild(error);
+    console.log(text);
     if (item.description == undefined) {
       description.textContent = "Aucune description n'a été précisée";
     } else {

@@ -13,17 +13,32 @@
 
 <body>
   <header>
-    <h1>Détail du TODO</h1>
+    <h1 id="detailed-title">Détail du TODO</h1>
   </header>
-  <main>
-    <section>
-      <h2 id="text"></h2>
-      <p id="description"></p>
-      <p id="error">Le TODO recherché n'existe pas, merci de fermer l'onglet/la fenêtre.</p>
+  <main id="detailed-main">
+    <section id="detailed-section">
+      <div class="rings">
+        <span class="ring"></span>
+        <span class="ring"></span>
+        <span class="ring"></span>
+        <span class="ring"></span>
+        <span class="ring"></span>
+        <span class="ring"></span>
+      </div>
+      <div class="detailed-content">
+        <p id="error">Le TODO recherché n'existe pas, merci de revenir sur la page précédente.</p>
+        <h2 id="text"></h2>
+        <p id="description"></p>
+      </div>
     </section>
   </main>
-  <footer>
-    <!-- Pied de page -->
+  <footer id="detailed-footer">
+    <p class="copyright">
+      <span class="copyright-text"><span class="copyright">©</span>Copyright</span>
+      <span class="copyright-logo">©</span>
+      <span id="year"></span> - <span class="important">Karen Pointon</span> - Tous droits
+      réservés
+    </p>
   </footer>
   <script src="./detailedTodo.js"></script>
 </body>

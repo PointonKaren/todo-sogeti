@@ -1,5 +1,6 @@
 const form = document.querySelector("#todoForm");
 const list = document.querySelector("#todoList");
+const yearSpan = document.getElementById("year");
 
 let todoItems = [
   { text: "Tâche A", description: undefined, checked: false, id: 0 },
@@ -8,9 +9,15 @@ let todoItems = [
   { text: "Tâche D", description: undefined, checked: true, id: 3 },
 ];
 
+/**
+ * Fonction qui gère le contenu du DOM en fonction du tableau todoItems
+ * @param {Object} todo
+ * @returns
+ */
 const renderTodo = (todo) => {
   // Met à jour le local storage suivant le contenu de todoItems à chaque appel de la fonction
   localStorage.setItem("todosLS", JSON.stringify(todoItems));
+
   const item = document.querySelector(`[data-key='${todo.id}']`);
   const isChecked = todo.checked ? "done" : "";
   const li = document.createElement("li");
@@ -38,7 +45,9 @@ const renderTodo = (todo) => {
   }
 };
 
-// Ecoute du clic sur un élément d'un ToDo et action sur le ToDo lié
+/**
+ * Ecoute du clic sur un élément d'un ToDo et action sur le ToDo lié
+ */
 list.addEventListener("click", (event) => {
   if (event.target.classList.contains("js-tick")) {
     item = event.target.parentElement;
@@ -56,26 +65,26 @@ list.addEventListener("click", (event) => {
  * Fonction qui gère ce qui se passe pour le ToDo lorsqu'il est coché
  * @param {Number} key
  */
-function toggleDone(key) {
+const toggleDone = (key) => {
   index = todoItems.findIndex((item) => item.id === Number(key));
   let todoItem = todoItems[index];
   todoItem.checked = !todoItem.checked;
   renderTodo(todoItem);
-}
+};
+
 /**
  * Fonction qui permet de supprimer l'item du tableau todoItems
  * @param {Number} key
  */
-function deleteTodo(key) {
+const deleteTodo = (key) => {
   const index = todoItems.findIndex((item) => item.id === Number(key));
   const todo = {
     deleted: true,
     ...todoItems[index],
   };
-  // remove the todo item from the array by filtering it out
   todoItems = todoItems.filter((item) => item.id !== Number(key));
   renderTodo(todo);
-}
+};
 
 /**
  * Fonction pour ajouter un TODO
@@ -106,4 +115,18 @@ form.addEventListener("submit", (event) => {
   } else if (text !== "" && description !== "") {
     addTodo(text, description);
   }
+  inputText.value = "";
+  inputDescription.value = "";
 });
+
+/**
+ * Année automatique dans le footer
+ */
+const yearCalc = () => {
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const yearParsed = parseInt(year);
+  yearSpan.textContent = `${yearParsed}`;
+};
+
+yearCalc();
