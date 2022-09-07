@@ -59,6 +59,10 @@ list.addEventListener("click", (event) => {
     deleteTodo(itemKey);
   }
   todoItems.sort((a, b) => a.checked - b.checked);
+  if (todoItems.length === 0) {
+    let empty = document.querySelector(".empty");
+    empty.textContent = "Il n'y a aucune tâche dans la liste.";
+  }
 });
 
 /**
