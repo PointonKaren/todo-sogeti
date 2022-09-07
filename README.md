@@ -1,6 +1,6 @@
-# TodoApp
+# ToDo List
 
-L'application web "ToDo" a été développée dans le cadre d'un test technique pour l'entreprise Sogeti.
+Cette ToDo list a été développée dans le cadre d'un test technique pour l'entreprise Sogeti.
 
 ## Features exigées:
 
@@ -10,7 +10,7 @@ L'application web "ToDo" a été développée dans le cadre d'un test technique 
 - 2: Etat d'un TODO :
   Quand un TODO est coché, son état est changé et il est déplacé en bas de la liste.
 - 3: Détailler un TODO
-  En cliquant sur le bouton [...], on accède à une nouvelle page dédiée au TODO contenant le détail du TODO dont la description, non visible sur la page principale.
+  En cliquant sur le bouton (🔍), on accède à une nouvelle page dédiée au TODO contenant le détail du TODO dont la description, non visible sur la page principale.
 - 4: Ajouter un nouveau TODO :
   - Le titre est obligatoire
   - La description est facultative
@@ -23,7 +23,7 @@ L'application web "ToDo" a été développée dans le cadre d'un test technique 
 
 # Commentaires
 
-- Lorsqu'on supprime une Tâche A, B, C ou D, que l'on recharge la page puis que l'on clique sur le bouton [...], le détail n'est pas disponible et la tâche est signalée comme inexistante.
+- Lorsqu'on supprime une Tâche A, B, C ou D, que l'on recharge la page puis que l'on clique sur le bouton (🔍), le détail n'est pas disponible et la tâche est signalée comme inexistante.
   C'est logique : la tâche est présente en dur dans le code :
 
   - Si on la supprime via le bouton, elle est supprimée du local storage, du tableau todoItems et du code.
