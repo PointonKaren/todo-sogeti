@@ -2,12 +2,61 @@ const form = document.querySelector("#todoForm");
 const list = document.querySelector("#todoList");
 const yearSpan = document.getElementById("year");
 
+let totalTodos = document.querySelector(".numberOfTodos");
+let totalChecked = document.querySelector(".numberOfChecked");
 let todoItems = [
   { text: "Tâche A", description: undefined, checked: false, id: 0 },
   { text: "Tâche B", description: "Une jolie description", checked: true, id: 1 },
   { text: "Tâche C", description: "42", checked: false, id: 2 },
   { text: "Tâche D", description: undefined, checked: true, id: 3 },
 ];
+
+/**
+ * Fonction qui calcule combien il y a de ToDos dans la liste
+ */
+const numberOfTodos = () => {
+  if (todoItems.length === 1) {
+    totalTodos.textContent = `Il y a 1 tâche dans la liste`;
+  } else if (todoItems.length > 1) {
+    totalTodos.textContent = `Il y a ${todoItems.length} tâches dans la liste`;
+  } else if (todoItems.length === 0) {
+    totalTodos.textContent = "Il n'y a aucune tâche dans la liste.";
+  }
+};
+/**
+ * Affichage du nombre de tâches cochées
+ */
+const numberOfChecked = () => {
+  let isChecked = 0;
+  for (item of todoItems) {
+    if (item.checked) {
+      isChecked++;
+    }
+  }
+  if (isChecked === 0) {
+    if (todoItems.length === 0) {
+      totalChecked.textContent = "";
+    } else if (todoItems.length === 1) {
+      totalChecked.innerHTML = "<br>mais elle n'est pas cochée.";
+    } else if (todoItems.length > 1) {
+      totalChecked.innerHTML = "<br>mais aucune n'a été cochée.";
+    }
+  } else if (isChecked === 1) {
+    if (todoItems.length === 0) {
+      console.log("C'est impossible, il y a une erreur.");
+    } else if (todoItems.length === 1) {
+      totalChecked.textContent = "qui est cochée.";
+    } else if (todoItems.length > 1) {
+      totalChecked.innerHTML = "dont 1 cochée.";
+    }
+  } else if (isChecked > 1 && todoItems.length > 1 && isChecked != todoItems.length) {
+    totalChecked.textContent = `dont ${isChecked} cochées.`;
+  } else if (isChecked > 1 && todoItems.length > 1 && isChecked === todoItems.length) {
+    totalChecked.textContent = `qui sont toutes cochées.`;
+  } else {
+    console.log("Ce n'est pas possible, il y a une erreur !");
+  }
+};
 
 /**
  * Fonction qui gère le contenu du DOM en fonction du tableau todoItems
@@ -59,10 +108,6 @@ list.addEventListener("click", (event) => {
     deleteTodo(itemKey);
   }
   todoItems.sort((a, b) => a.checked - b.checked);
-  if (todoItems.length === 0) {
-    let empty = document.querySelector(".empty");
-    empty.textContent = "Il n'y a aucune tâche dans la liste.";
-  }
 });
 
 /**
@@ -74,6 +119,7 @@ const toggleDone = (key) => {
   let todoItem = todoItems[index];
   todoItem.checked = !todoItem.checked;
   renderTodo(todoItem);
+  numberOfChecked();
 };
 
 /**
@@ -88,6 +134,8 @@ const deleteTodo = (key) => {
   };
   todoItems = todoItems.filter((item) => item.id !== Number(key));
   renderTodo(todo);
+  numberOfTodos();
+  numberOfChecked();
 };
 
 /**
@@ -103,6 +151,8 @@ const addTodo = (text, description) => {
   };
   todoItems.push(todo);
   renderTodo(todo);
+  numberOfTodos();
+  numberOfChecked();
 };
 
 /**
@@ -134,3 +184,5 @@ const yearCalc = () => {
 };
 
 yearCalc();
+numberOfTodos();
+numberOfChecked();
