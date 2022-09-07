@@ -1,22 +1,17 @@
 // Composants
 @import "./components/boutons";
 @import "./components/form";
-@import "./components/icones";
 @import "./components/puces";
 
 // Fonts
-
 @import "./fonts/fonts";
 
 // Layouts
-
 @import "./layouts/body";
 @import "./layouts/footer";
-@import "./layouts/header";
 
 // Responsive
+@import "./responsive/tablette";
 
 // utils
-@import "./utils/keyframes";
-@import "./utils/mixins";
 @import "./utils/variables";
