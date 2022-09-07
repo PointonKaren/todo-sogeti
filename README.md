@@ -20,6 +20,8 @@ Cette ToDo list a été développée dans le cadre d'un test technique pour l'en
 
 - Supprimer un TODO : au clic sur la croix, le TODO est supprimé de la liste.
 - Au dernier TODO supprimé, un message signifiant que la liste est vide apparaît.
+- Le nombre de tâches dans la liste apparaît.
+- Le nombre de tâches cochées apparaît.
 
 # Commentaires
 
