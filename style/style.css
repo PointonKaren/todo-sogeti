@@ -30,6 +30,7 @@ body main {
   border-radius: 5px;
   max-width: 380px;
   height: 80vh;
+  min-height: 520px;
   margin: auto;
   padding: 5% 5% 2% 5%;
 }
@@ -39,6 +40,7 @@ body main section {
   border-radius: 3px;
   background-color: beige;
   height: 75vh;
+  min-height: 480px;
 }
 body main section .rings {
   border-bottom: 1px dashed black;
@@ -96,9 +98,13 @@ body main section .content .form #todoForm .todoDescription {
   height: 35px;
   resize: none;
 }
-body main section .content .form .requiredField {
-  text-align: center;
-  margin-top: 5px;
+body main section .content .form #todoForm .requiredField {
+  margin: auto;
+  margin-left: 25px;
+  margin-bottom: -10px;
+}
+body main section .content .form #todoForm .submit {
+  margin-bottom: 10px;
 }
 body main section .content .list {
   padding-bottom: 10px;
@@ -108,14 +114,14 @@ body main section .content .list h2 {
   margin-bottom: 0;
 }
 body main section .content .list h3 {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   text-align: center;
 }
 body main section .content .list #todoList {
   display: flex;
   flex-direction: column-reverse;
   padding: 0;
-  height: 25vh;
+  max-height: 25vh;
   gap: 1vh;
   overflow-y: scroll;
 }
@@ -124,7 +130,6 @@ body main section .content .list #todoList .todo-item {
   max-width: 220px;
   margin: auto;
   margin-bottom: 1vh;
-  align-self: center;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -256,6 +261,9 @@ footer .copyright-text {
   footer .copyright-logo {
     display: none;
   }
+  #detailed-footer {
+    top: 0;
+  }
 }
 @media screen and (min-width: 600px) {
   body main {
@@ -282,7 +290,10 @@ footer .copyright-text {
   body main section .content .list #todoList {
     height: 30vh;
   }
-  body main #detailed-section .rings .ring:before {
+  body #detailed-main {
+    top: 0;
+  }
+  body #detailed-main #detailed-section .rings .ring:before {
     left: 0;
   }
 }/*# sourceMappingURL=style.css.map */

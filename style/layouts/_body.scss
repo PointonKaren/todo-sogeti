@@ -11,6 +11,7 @@ body {
     border-radius: 5px;
     max-width: 380px;
     height: 80vh;
+    min-height: 520px;
     margin: auto;
     padding: 5% 5% 2% 5%;
     section {
@@ -19,6 +20,7 @@ body {
       border-radius: 3px;
       background-color: $page;
       height: 75vh;
+      min-height: 480px;
       .rings {
         border-bottom: 1px dashed black;
         display: -webkit-box;
@@ -80,10 +82,14 @@ body {
               height: 35px;
               resize: none;
             }
-          }
-          .requiredField {
-            text-align: center;
-            margin-top: 5px;
+            .requiredField {
+              margin: auto;
+              margin-left: 25px;
+              margin-bottom: -10px;
+            }
+            .submit {
+              margin-bottom: 10px;
+            }
           }
         }
         .list {
@@ -93,7 +99,7 @@ body {
             margin-bottom: 0;
           }
           h3 {
-            font-size: 1.7rem;
+            font-size: 1.6rem;
             text-align: center;
           }
           #todoList {
@@ -105,7 +111,7 @@ body {
             -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
             padding: 0;
-            height: 25vh;
+            max-height: 25vh;
             gap: 1vh;
             overflow-y: scroll;
             .todo-item {
@@ -113,8 +119,6 @@ body {
               max-width: 220px;
               margin: auto;
               margin-bottom: 1vh;
-              -ms-flex-item-align: center;
-              align-self: center;
               display: -webkit-box;
               display: -ms-flexbox;
               display: flex;
