@@ -1,13 +1,25 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
-button {
+button,
+.detail-button {
   border-radius: 50px;
-  border: 3px solid #02251e;
-  padding: 0;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-bottom: 5px;
   cursor: pointer;
+  border: 3px solid;
+}
+
+button {
+  border-color: rgb(202, 49, 49);
+  color: rgb(202, 49, 49);
+  margin-left: 5px;
+  font-size: 1rem;
+}
+
+.detail-button {
+  width: 15px;
+  height: 15px;
+  font-size: 0.8rem;
+  padding: 5px;
+  margin: 0;
 }
 
 input[type=checkbox] {
@@ -21,6 +33,11 @@ li {
 h2,
 h3 {
   font-family: "Cookie", cursive;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 body header h1 {
@@ -142,7 +159,7 @@ body main section .content .list #todoList .todo-item .tick {
   width: 20px;
   height: 20px;
   border: 3px solid #02251e;
-  border-radius: 50%;
+  border-radius: 50px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -163,19 +180,15 @@ body main section .content .list #todoList .todo-item span {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-body main section .content .list #todoList .todo-item .delete {
-  color: rgb(202, 49, 49);
-  border-color: rgb(202, 49, 49);
-  font-size: 1rem;
-  padding-bottom: 0;
-  margin-left: 5px;
-}
 body main section .content .list #todoList .done {
   order: -1;
 }
 body main section .content .list #todoList .done span {
   text-decoration: line-through;
   color: grey;
+}
+body main section .content .list #todoList .done .detail-button {
+  text-decoration: none;
 }
 body main section .content .list #todoList .done .tick:before {
   display: inline;
