@@ -138,6 +138,8 @@ body main section .content .list h3 {
 }
 body main section .content .list p {
   text-align: center;
+  margin-top: 0;
+  margin-bottom: 5px;
 }
 body main section .content .list #todoList {
   display: flex;

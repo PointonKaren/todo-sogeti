@@ -37,9 +37,9 @@ const numberOfChecked = () => {
     if (todoItems.length === 0) {
       totalChecked.textContent = "";
     } else if (todoItems.length === 1) {
-      totalChecked.innerHTML = "<br>mais elle n'est pas cochée.";
+      totalChecked.textContent = "mais elle n'est pas cochée.";
     } else if (todoItems.length > 1) {
-      totalChecked.innerHTML = "<br>mais aucune n'a été cochée.";
+      totalChecked.textContent = "mais aucune n'a été cochée.";
     }
   } else if (isChecked === 1) {
     if (todoItems.length === 0) {
@@ -47,7 +47,7 @@ const numberOfChecked = () => {
     } else if (todoItems.length === 1) {
       totalChecked.textContent = "qui est cochée.";
     } else if (todoItems.length > 1) {
-      totalChecked.innerHTML = "dont 1 cochée.";
+      totalChecked.textContent = "dont 1 cochée.";
     }
   } else if (isChecked > 1 && todoItems.length > 1 && isChecked != todoItems.length) {
     totalChecked.textContent = `dont ${isChecked} cochées.`;
