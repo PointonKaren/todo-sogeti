@@ -1,0 +1,16 @@
+@media screen and (min-width: 1200px) {
+  body {
+    main {
+      section {
+        .content {
+          .list {
+            #todoList {
+              margin: auto;
+              max-height: 38vh;
+            }
+          }
+        }
+      }
+    }
+  }
+}
