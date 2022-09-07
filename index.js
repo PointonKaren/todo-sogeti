@@ -28,7 +28,7 @@ const renderTodo = (todo) => {
      <input id="${todo.id}" type="checkbox"/>
      <label for="${todo.id}" class="tick js-tick"></label>
      <span>${todo.text}</span>
-     <a href="./detailedTodo.html?id=${todo.id}" target="_blank"><button>...</button></a>
+     <a href="./detailedTodo.html?id=${todo.id}" target="_blank" title="Détail du ToDo"><span class="detail-button">🔍</span></a>
      <button class="delete">✕</button>
      `;
 
